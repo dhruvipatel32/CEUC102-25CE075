@@ -1,106 +1,86 @@
 #include<iostream>
 using namespace std;
 
-
 class Student
 {
-     public:
-
-    int roll_number;
+    int roll_no;
     string name;
     int marks[3];
-    int avrg=0;
+    float avg=0;
 
-    Student()
+public:
+
+    Student():roll_no(1),name("dhruvi")
     {
-
-        cout<<"calling default con."<<endl;
-        roll_number=1;
-        name="dhruvi";
-        for(int i=0;i<3;i++)
-        {
-            marks[i]=200;
-            avrg = avrg + marks[i];
-        }
-        avrg=avrg/3;
-    }
-    void output()
-    {
-        cout<<"The Roll Number of the student is :  "<<roll_number<<endl;
-        cout<<"The Name Of the Student is: "<<name<<endl;
-        cout<<"Marks of three subject: "<<endl;
-        for(int i=0;i<3;i++)
-        {
-           cout<<"marks of "<<i+1<<"subject is "<<marks[i]<<endl;
-
-        }
-        cout<<"average marks of student : "<<avrg;
-
-    }
-} ;
-int main()
-{
-    Student a[3];
-    cout<<"Details of the marks "<<endl<<endl;
-    for(int i=0 ;i<3 ;i++)
-    {
-        a[i].output();
-
-    }
-
-}
-/*#include<iostream>
-using namespace std;
-
-
-class Student
-{
-     public:
-
-    int roll_number;
-    string name;
-    int marks[3];
-    int avrg=0;
-
-    Student()
-    {
-
-        cout<<"calling default con."<<endl;
-        roll_number=1;
-        name="dhruvi";
+        cout<<"Calling Deafult constructer.."<<endl;;
+        /*roll_no=1;
+        name="Dhruvi";*/
         marks[0]=20;
         marks[1]=30;
         marks[2]=40;
         for(int i=0;i<3;i++)
         {
-
-            avrg = avrg + marks[i];
+            avg = avg + marks[i];
         }
-        avrg=avrg/3;
+        avg = avg/3;
     }
-    void output()
+    Student(int r,string n,int m[3],float a)
     {
-        cout<<"The Roll Number of the student is :  "<<roll_number<<endl;
-        cout<<"The Name Of the Student is: "<<name<<endl;
-        cout<<"Marks of three subject: "<<endl;
+        cout<<"Calling Perameterrise constructer.."<<endl;;
+        roll_no=r;
+        name=n;
+        avg=a;
         for(int i=0;i<3;i++)
         {
-           cout<<"marks of "<<i+1<<"subject is "<<marks[i]<<endl;
-
+            marks[i]=m[i];
         }
-        cout<<"average marks of student : "<<avrg<<endl<<endl;
-
     }
-} ;
+
+    void display();
+};
+
+void Student :: display()
+{
+    cout<<"----------------------"<<endl;
+    cout<<"Roll number of student is "<<roll_no<<endl;
+    cout<<"Name of the student is "<<name<<endl;
+    cout<<"marks of 3 subject.."<<endl;
+    for(int i=0;i<3;i++)
+    {
+        cout<<"marks of "<<i+1<<" Subject is "<<marks[i]<<endl;
+    }
+    cout<<"Average marks is "<<avg<<endl;
+}
+
 int main()
 {
-    Student a[3];
-    cout<<"Details of the marks "<<endl<<endl;
-    for(int i=0 ;i<3 ;i++)
+    Student s[2];
+    cout<<"printing details..."<<endl;
+    for(int i=0;i<2;i++)
     {
-        a[i].output();
-
+        s[i].display();
     }
 
+    int roll_no;
+    string name;
+    int marks[3];
+    float avg=0;
+     cout<<"----------------------"<<endl;
+    cout<<"Enter the Roll number of student : ";
+    cin>>roll_no;
+    cout<<"Enter the Name of the student : ";
+    cin>>name;
+    cout<<"Enter the marks of 3 subject.."<<endl;;
+    for(int i=0;i<3;i++)
+    {
+        cout<<"Enter the marks of "<<i+1<<" Subject : ";
+        cin>>marks[i];
+        avg = avg + marks[i];
+    }
+    avg = avg/3;
+    cout<<endl;
+    cout<<"printing details..."<<endl;
+    Student s1(roll_no,name,marks,avg);
+    s1.display();
+    return 0;
 }
-*/
