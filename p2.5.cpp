@@ -110,10 +110,6 @@ int main()
                 }
                 break;
             }
-        case 3:
-            {
-                return 0;
-            }
         default:
             {
                 cout<<"enter a valid choice";
@@ -123,3 +119,4 @@ int main()
     }while(ch!=3);
     return 0;
 }
+
