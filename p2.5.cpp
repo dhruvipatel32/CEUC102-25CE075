@@ -13,7 +13,7 @@ public:
     loan()
     {
         loan_id=1;
-        name="tarak mehta";
+        name="krunal sir";
         loan_amt=10000;
         loan_int_rate=10;
         loan_tenure=12;
@@ -119,4 +119,5 @@ int main()
     }while(ch!=3);
     return 0;
 }
+
 
